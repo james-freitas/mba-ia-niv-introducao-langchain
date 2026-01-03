@@ -20,6 +20,22 @@ Para configurar o ambiente e instalar as dependências do projeto, siga os passo
    pip install -r requirements.txt
    ```
 
+   - Instalar também
+
+   ```bash
+   pip install langchain-text-splitters
+   pip install langchain-community langchain-core
+   pip install langchain-classic
+   ```
+
+   > Quando houver erro de módulo não encontrado tentar utilizar o `langchain_classic` ao invés de `langchain`. 
+   ```python
+      #from langchain.chains.summarize import load_summarize_chain
+      from langchain_classic.chains.summarize import load_summarize_chain
+
+   ```
+
+
    **Opção B - Instalação direta dos pacotes principais:**
    ```bash
    pip install langchain langchain-openai langchain-google-genai langchain-community langchain-text-splitters langchain-postgres psycopg[binary] python-dotenv beautifulsoup4 pypdf && pip freeze > requirements.txt
