@@ -44,16 +44,10 @@ splitter = RecursiveCharacterTextSplitter(
 
 parts = splitter.create_documents([long_text])
 
-# print all parts
-# for part in parts:
-#     print(part.page_content)
-#     print("-"*50)
-
-
 llm = ChatOpenAI(model="gpt-5-nano", temperature=0)
 
-# stuff por colocar tudo em um lugar só pode encher demais a janela de contexto
-chain_summarize = load_summarize_chain(llm, chain_type="stuff", verbose=False)
+# Resume cada parte individualmente e depois combina os resumos. Gasta mais e é mais lento, mas funciona melhor para textos muito longos.
+chain_summarize = load_summarize_chain(llm, chain_type="map_reduce", verbose=True)
 
 result = chain_summarize.invoke({"input_documents": parts})
 print(result["output_text"])
