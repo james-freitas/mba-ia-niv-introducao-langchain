@@ -21,3 +21,8 @@ def web_search_mock(query: str) -> str:
     """"Mocked web search tool. Returns a hardcoded result."""
 
     data = {"Brazil": "Brasilia", "France": "Paris", "Germany": "Berlin", "Italy": "Rome", "Spain": "Madrid"}
+
+    for country, capital in data.items():
+        if country.lower() in query.lower():
+            return f"The capital of {country} is {capital}."
+    return "I don't know the capital of that country."
