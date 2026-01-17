@@ -39,7 +39,8 @@ def web_search_mock(query: str) -> str:
 #llm = ChatOpenAI(model="gpt-5-mini", disable_streaming=True)
 #llm = ChatOpenAI(model="gpt-3.5-turbo", disable_streaming=True)
 #llm = ChatOpenAI(model="gpt-3.5-turbo")
-llm = ChatOpenAI(model="gpt-3.5-turbo", temperature=0)
+#llm = ChatOpenAI(model="gpt-3.5-turbo", temperature=0)
+llm = ChatOpenAI(model="gpt-3.5-turbo", temperature=0.5)
 
 tools = [calculator,web_search_mock]
 
@@ -52,7 +53,8 @@ agent_executor = AgentExecutor.from_agent_and_tools(
     tools=tools,
     verbose=True,
     handle_parsing_errors="Invalid format. Either provide Action and Action Input, or a Final Answer only.",
-    max_iterations=3
+    #max_iterations=2
+    #max_iterations=3
 )
 
 print(agent_executor.invoke({"input": "What is the capital of Iran?"}))
