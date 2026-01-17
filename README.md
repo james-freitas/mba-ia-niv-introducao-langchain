@@ -141,3 +141,8 @@ Para mais detalhes, consulte o tutorial completo: [Como Gerar uma API Key na Ope
 Para mais informações, consulte a documentação oficial: [Como usar chaves da API Gemini](https://ai.google.dev/gemini-api/docs/api-key?hl=pt-BR)
 
 **Nota:** Certifique-se de não compartilhar suas chaves de API publicamente e de armazená-las em locais seguros, pois elas concedem acesso aos serviços correspondentes.
+
+## Resources
+
+- https://smith.langchain.com/hub/hwchase17/react
+- https://github.com/devfullcycle/mba-ia-niv-introducao-langchain
