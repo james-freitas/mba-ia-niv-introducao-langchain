@@ -147,8 +147,17 @@ Para mais informações, consulte a documentação oficial: [Como usar chaves da
 - https://smith.langchain.com/hub/hwchase17/react
 - https://github.com/devfullcycle/mba-ia-niv-introducao-langchain
 
-6. **Dependencias adicionais**
+**Dependencias adicionais**
 ```
 pip install langchain-postgres && pip freeze > requirements.txt
 pip install "psycopg[binary]" && pip freeze > requirements.txt
+```
+
+**Conexão com o Banco de dados**
+```
+Host: localhost
+Port: 5432
+User: postgres
+Password: postgres
+Database: rag
 ```
